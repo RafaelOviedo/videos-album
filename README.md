@@ -16,5 +16,5 @@ and then add it to the list displayed below.
 
 If you exceed 6 videos you can go to the next 'page' with the arrow.
 ```
-![home1](https://user-images.githubusercontent.com/77502888/186591294-faf2dd31-01b8-42d5-a2c3-5ef65ed827a2.jpg)
+![home](./exampleImages/home1.jpg)
 ```
