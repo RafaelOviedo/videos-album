@@ -1,24 +1,18 @@
-# videos-album
+## To build up the project
+```
+-Clone this repository.
+-Step into the folder you cloned it.
+-Run npm install and then npm run serve.
+-Go to http://localhost:8080/
 
-## Project setup
+OR you can go to this deployed link:
 ```
-npm install
-```
+https://videos-album.vercel.app/
 
-### Compiles and hot-reloads for development
+## As requested
 ```
-npm run serve
+In the home page, you have an input, where you can paste a YouTube link,
+and then add it to the list displayed below. 
 ```
-
-### Compiles and minifies for production
+![home](./exampleImages/home1.jpg)
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
