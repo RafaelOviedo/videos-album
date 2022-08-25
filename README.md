@@ -85,11 +85,16 @@ Agregué esto porque no quería dejar por fuera la funcionalidad de vue-router.
 ```
 As requested i created a 'videos' table to save the data sent from the
 front with the lambda functions.
+------------------------------------------------------------------------
+
+Según lo pedido, creé una tabla 'videos' para guardar los datos enviados desde el front con las funciones lambda.
 ```
 ![videosTable](./exampleImages/videosTable.jpg)
 ```
 If you go to the 'Explore table items' section, you can see that there is effectively the items stored in the DynamoDB database.
+---------------------------------------------------------------------------
 
+Si vas a la sección 'Explore table items', se puede ver que efectivamente hay elementos almacenados en la base de datos de DynamoDB.
 ```
 ![tableItems](./exampleImages/tableItems.jpg)
 ```
@@ -99,24 +104,49 @@ which will handle the correspondant actions for every need.
 -deleteVideo Function
 -addVideo Function
 -getVideos Function
+-----------------------------------------------------------------------------
 
+En la siguiente imagen, creé tres funciones lambda que gestionan las 
+acciones correspondientes en cada caso.
+
+-deleteVideo Function
+-addVideo Function
+-getVideos Function
 ```
 ![lambdaFunctions](./exampleImages/lambdaFunctions.jpg)
 ```
 The three functions have similar behaviour: 
+
 the deleteVideo function:
 
 -check if the data sent in the body is string to convert to json
 -sets a params object with the element to delete
 -tries the execution of the delete() method or throws error
+----------------------------------------------------------------------
+
+Las tres funciones tienen un comportamiento similar:
+
+la función deleteVideo:
+
+-verifica si los datos enviados en el body son strings y los convierte a json
+-crea un objeto params con el elemento a eliminar
+-ejecuta el método delete() o arroja un error
 ```
 ![deleteFunction](./exampleImages/deleteFunction.jpg)
 ```
 The addVideo function:
 
 -aswell check if the data sent in the body is string to convert to json
--sets a params object with the element to delete
+-sets a params object with the element to create
 -tries the execution of the put() method or throws error
+-------------------------------------------------------------------------
+
+La función addVideo:
+
+-también verifica si los datos enviados en el body son strings para
+convertirlos a json
+-crea un objeto params con el elemento a crear
+-intenta la ejecución del método put() o arroja un error
 ```
 ![addFunction](./exampleImages/addFunction.jpg)
 ```
@@ -124,11 +154,21 @@ The getVideos function:
 
 -use the scan() method to check the elements in the table and
 returns the data in the body or throws error
+----------------------------------------------------------------
+
+La función getVideos:
+
+-usa el método scan() para comprobar los elementos de la tabla y
+devuelve los datos en el cuerpo o arroja un error
 ```
 ![getFunction](./exampleImages/getFunction.jpg)
 ```
 And finally those three functions executes to three different endpoints
 thanks to the API Gateaway in this link:
+-----------------------------------------------------------------------
+
+Y finalmente esas tres funciones se ejecutan en tres rutas distintas
+gracias a la API Gateaway con este link:
 ```
 https://9f36sdoad4.execute-api.us-east-1.amazonaws.com/videos
 
