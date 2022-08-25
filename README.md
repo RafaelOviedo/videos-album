@@ -21,7 +21,7 @@ If you exceed 6 videos you can go to the next 'page' with the arrow.
 ![home](./exampleImages/home1.jpg)
 ```
 If you click in the thumbnail of the video (not the X), you will open a modal,
-which will display the infotmation of the video such Title and Description, and
+which will display the information of the video such as Title and Description, and
 if you click in the thumbnail again you will be redirected to the internal reproducer.
 ```
 ![videoModal](./exampleImages/videoModal.jpg)
@@ -33,6 +33,12 @@ In the reproducer you can watch the video and go back to the previous modal.
 In the video listing, if you click the X button in the upper right arrow on the
 thumbnail, you will open the delete modal, with two options, 'cancel' (which will
 return you back), or delete, which will delete that video from the Dynamo Database
-and you will no longer see that video in the list.
+and you will no longer see it in the list.
 ```
 ![deleteModal](./exampleImages/deleteModal.jpg)
+```
+And last (not requested but added as well), a About section where you can see
+some extra information and a couple of links to my social media.
+I added this because i didn't wanted to let out the vue-router functionality.
+```
+![aboutSection](./exampleImages/aboutSection.jpg)
