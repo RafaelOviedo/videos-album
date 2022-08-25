@@ -31,14 +31,14 @@ import store from '../store/index'
 export default {
   name: "VideoDetailModal",
   props: {
-    item: Object
+    item: Object,
   },
   data() {
     return {}
   },
   methods: {
     closeModal() {
-      store.commit('toggleModal')
+      this.$emit('closeModal')
     },
     openReproducer() {
       store.commit('toggleReproducer')
