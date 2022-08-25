@@ -63,7 +63,7 @@ export default {
         if(this.inputText.length < 43 || this.inputText.length > 43) {
             alert(`The link format must be: https://www.youtube.com/watch?v= + videoId
 
-For example: https://www.youtube.com/watch?v=CfEOwQnd-OM`)
+For example: https://www.youtube.com/watch?v=-_Yf3LhTQfw`)
 
             this.inputText = ''
         }
