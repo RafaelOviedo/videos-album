@@ -1,6 +1,6 @@
 import { createStore } from "vuex";
 import axios from "axios";
-const apiKeyVar = process.env.VUE_APP_YOUTUBE_API_KEY;
+const apiKeyVar = process.env.VUE_APP_YOUTUBE_API_KEY2;
 
 const store = createStore({
     state: {
