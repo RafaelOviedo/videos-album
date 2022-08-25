@@ -1,4 +1,4 @@
-## To build up the project
+## To build up the project || Para levantar el proyecto
 ```
 -Clone this repository.
 -Step into the folder you cloned it.
@@ -21,7 +21,7 @@ O puedes ir a este enlace también para verlo deployado:
 ```
 https://videos-album.vercel.app/
 
-## As requested
+## As requested || De acuerdo a lo pedido
 ```
 In the home page, you have an input, where you can paste a YouTube link,
 and then add it (with the button) to the list displayed below. 
