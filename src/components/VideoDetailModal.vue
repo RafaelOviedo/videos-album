@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     closeModal() {
-      this.$emit('closeModal')
+      this.$emit('closeDetailModal')
     },
     openReproducer() {
       store.commit('toggleReproducer')
