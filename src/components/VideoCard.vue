@@ -37,7 +37,7 @@ export default {
   methods: {
     openDetailModal() {
       let id = this.item.data.items[0].id;
-      store.commit('setVideoId', id)
+      store.dispatch('setVideoId', id)
       this.isDetailModalOpen = !this.isDetailModalOpen;
     },
     openDeleteModal() {

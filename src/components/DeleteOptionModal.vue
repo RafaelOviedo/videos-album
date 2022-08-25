@@ -4,7 +4,7 @@
     <div id="optionsContainer">
       <div id="labelContainer">
         <div id="textBox">
-          <p id="label"><b>¿Seguro que quieres eliminar este video?</b></p>
+          <p id="label"><b>¿Are you sure you want to delete this video?</b></p>
         </div>
         <div id="closeButtonBox">
           <button id="cancelButton" @click="closeModal"><b>&times;</b></button>
@@ -13,8 +13,8 @@
       <div id="buttonsContainer">
         <div id="leftEmptyBox"></div>
         <div id="buttonsBox">
-          <button id="whiteCancelButton" @click="closeModal"><b>Cancelar</b></button>
-          <button id="deleteButton" @click="deleteVideo(item.data.items[0].id)"><b>Eliminar</b></button>
+          <button id="whiteCancelButton" @click="closeModal"><b>Cancel</b></button>
+          <button id="deleteButton" @click="deleteVideo(item.data.items[0].id)"><b>Delete</b></button>
         </div>
       </div>
     </div>

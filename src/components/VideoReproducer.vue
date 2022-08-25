@@ -5,7 +5,7 @@
       <div id="closeButtonContainer">
         <button id="closeReproducer" @click="closeReproducer">
           <img id="backButton" :src="backButton" alt="backButton">
-          <b>Volver</b>
+          <b>Return</b>
         </button>
       </div>
 
