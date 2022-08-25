@@ -77,7 +77,9 @@ ver información extra y un par de links a mis redes sociales.
 Agregué esto porque no quería dejar por fuera la funcionalidad de vue-router.
 ```
 ![aboutSection](./exampleImages/aboutSection.jpg)
-
+```
+------------------------------------------------------------------------------
+```
 ## AWS
 
 ```
@@ -100,3 +102,35 @@ which will handle the correspondant actions for every need.
 
 ```
 ![lambdaFunctions](./exampleImages/lambdaFunctions.jpg)
+```
+The three functions have similar behaviour: 
+the deleteVideo function:
+
+-check if the data sent in the body is string to convert to json
+-sets a params object with the element to delete
+-tries the execution of the delete() method or throws error
+```
+![deleteFunction](./exampleImages/deleteFunction.jpg)
+```
+The addVideo function:
+
+-aswell check if the data sent in the body is string to convert to json
+-sets a params object with the element to delete
+-tries the execution of the put() method or throws error
+```
+![addFunction](./exampleImages/addFunction.jpg)
+```
+The getVideos function:
+
+-use the scan() method to check the elements in the table and
+returns the data in the body or throws error
+```
+![getFunction](./exampleImages/getFunction.jpg)
+```
+And finally those three functions executes to three different endpoints
+thanks to the API Gateaway in this link:
+```
+https://9f36sdoad4.execute-api.us-east-1.amazonaws.com/videos
+
+![apiGateaway](./exampleImages/apiGateaway.jpg)
+![routes](./exampleImages/routes.jpg)
