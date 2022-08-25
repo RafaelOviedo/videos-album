@@ -61,7 +61,10 @@ export default {
   methods: {
     async addVideo() {
         if(this.inputText.length < 43 || this.inputText.length > 43) {
-            alert('The link format must be: https://www.youtube.com/watch?v= + videoId')
+            alert(`The link format must be: https://www.youtube.com/watch?v= + videoId
+
+For example: https://www.youtube.com/watch?v=CfEOwQnd-OM`)
+
             this.inputText = ''
         }
         else {
