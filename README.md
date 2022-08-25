@@ -77,3 +77,26 @@ ver información extra y un par de links a mis redes sociales.
 Agregué esto porque no quería dejar por fuera la funcionalidad de vue-router.
 ```
 ![aboutSection](./exampleImages/aboutSection.jpg)
+
+## AWS
+
+```
+As requested i created a 'videos' table to save the data sent from the
+front with the lambda functions.
+```
+![videosTable](./exampleImages/videosTable.jpg)
+```
+If you go to the 'Explore table items' section, you can see that there is effectively the items stored in the DynamoDB database.
+
+```
+![tableItems](./exampleImages/tableItems.jpg)
+```
+As you can see in the next image i created three different lambda functions
+which will handle the correspondant actions for every need.
+
+-deleteVideo Function
+-addVideo Function
+-getVideos Function
+
+```
+![lambdaFunctions](./exampleImages/lambdaFunctions.jpg)
