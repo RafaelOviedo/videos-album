@@ -18,3 +18,12 @@ If you exceed 6 videos you can go to the next 'page' with the arrow.
 ```
 ![home](./exampleImages/home1.jpg)
 ```
+If you click in the thumbnail of the video (not the X), you will open a modal,
+which will display the infotmation of the video such Title and Description, and
+if you click in the thumbnail again you will be redirected to the internal reproducer.
+```
+![videoModal](./exampleImages/videoModal.jpg)
+```
+In the reproducer you can watch the video and go back to the previous modal.
+```
+![reproducer](./exampleImages/reproducer.jpg)
