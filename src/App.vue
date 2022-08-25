@@ -1,18 +1,22 @@
 <template>
   <div>
     <NavBar />
+    <VideoReproducer v-if="isReproducerOpen"/>
     <router-view />
   </div>
 </template>
 
 <script>
 import NavBar from './components/NavBar.vue'
+import VideoReproducer from './components/VideoReproducer.vue'
 import store from './store/index'
+import { mapState } from 'vuex'
 
 export default {
   name: 'App',
   components: {
-    NavBar
+    NavBar,
+    VideoReproducer
   },
   data() {
     return {}
@@ -20,16 +24,14 @@ export default {
   created() {
     store.dispatch('getVideos')
   },
+  computed: {
+    ...mapState(["isReproducerOpen"]),
+  },
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  /* -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px; */
+  font-family: Poppins, Avenir, Helvetica, Arial, sans-serif;
 }
 </style>
