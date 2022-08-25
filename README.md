@@ -13,6 +13,8 @@ https://videos-album.vercel.app/
 ```
 In the home page, you have an input, where you can paste a YouTube link,
 and then add it to the list displayed below. 
+
+If you exceed 6 videos you can go to the next 'page' with the arrow.
 ```
 ![home](./exampleImages/home1.jpg)
 ```
