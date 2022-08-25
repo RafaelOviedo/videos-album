@@ -1,11 +1,14 @@
 <template>
   <div id="videoCard">
     <div id="imageContainer"> 
-      <img id="thumbImage" :src="item.data.items[0].snippet.thumbnails.high.url" alt="thumb" @click="openModal">
-      <button id="deleteButton" @click="deleteVideo(item.data.items[0].id)">X</button>
+      <img id="thumbImage" :src="item.data.items[0].snippet.thumbnails.high.url" alt="thumb" @click="openDetailModal">
+      <button id="deleteButton" @click="openDeleteModal">&times;</button>
       
       <transition name="fade">
-      <VideoDetailModal :item="item" v-if="isModalOpen"/>
+        <VideoDetailModal v-if="isDetailModalOpen" @closeDetailModal="closeDetailModal" :item="item"/>
+      </transition>
+      <transition name="fade">
+        <DeleteOptionModal v-if="isDeleteModalOpen" @closeDeleteModal="closeDeleteModal" :item="item"/>
       </transition>
     </div>
   </div>
@@ -13,36 +16,40 @@
 
 <script>
 import store from '../store/index'
-import axios from 'axios'
 import VideoDetailModal from './VideoDetailModal.vue'
-import { mapState } from 'vuex'
+import DeleteOptionModal from './DeleteOptionModal.vue'
 
 export default {
   name: "VideoCard",
   components: {
-    VideoDetailModal
+    VideoDetailModal,
+    DeleteOptionModal
   },
   props: {
     item: Object,
   },
   data() {
-    return {}
+    return {
+      isDetailModalOpen: false,
+      isDeleteModalOpen: false,
+    }
   },
   methods: {
-    async deleteVideo(elementId) {
-        await axios.delete('https://9f36sdoad4.execute-api.us-east-1.amazonaws.com/videos', { 
-            data: {
-                videoId: `https://www.youtube.com/watch?v=${elementId}`
-            }
-        })
+    openDetailModal() {
+      let id = this.item.data.items[0].id;
+      store.commit('setVideoId', id)
+      this.isDetailModalOpen = !this.isDetailModalOpen;
     },
-    openModal() {
-      store.commit('toggleModal')
+    openDeleteModal() {
+      this.isDeleteModalOpen = !this.isDeleteModalOpen;
+    },
+    closeDetailModal() {
+      this.isDetailModalOpen = !this.isDetailModalOpen;
+    },
+    closeDeleteModal() {
+      this.isDeleteModalOpen = !this.isDeleteModalOpen;
     },
   },
-  computed: {
-    ...mapState(['isModalOpen'])
-  }
 }
 </script>
 
@@ -71,6 +78,7 @@ export default {
     cursor: pointer;
     background: #000;
     color: #fff;
+    font-size: 15px;
 }
 
 #videoDetailLink {
