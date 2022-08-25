@@ -60,11 +60,17 @@ export default {
   },
   methods: {
     async addVideo() {
-        await axios.post('https://9f36sdoad4.execute-api.us-east-1.amazonaws.com/videos', { 
+        if(this.inputText.length < 43 || this.inputText.length > 43) {
+            alert('The link format must be: https://www.youtube.com/watch?v= + videoId')
+            this.inputText = ''
+        }
+        else {
+            await axios.post('https://9f36sdoad4.execute-api.us-east-1.amazonaws.com/videos', { 
             videoId: this.inputText
-        })
+            })
         
-        this.inputText = ''
+            this.inputText = ''
+        }
     },
     previousPage() {
       if (this.numOfPage > 0) {
