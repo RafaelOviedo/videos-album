@@ -166,11 +166,11 @@ devuelve los datos en el cuerpo o arroja un error
 ```
 ![getFunction](./exampleImages/getFunction.jpg)
 ```
-And finally those three functions executes to three different endpoints
+And finally those three functions executes in a final endpoint '/videos'
 thanks to the API Gateaway in this link:
 -----------------------------------------------------------------------
 
-Y finalmente esas tres funciones se ejecutan en tres rutas distintas
+Y finalmente esas tres funciones se ejecutan en una ruta final '/videos'
 gracias a la API Gateaway con este link:
 ```
 https://9f36sdoad4.execute-api.us-east-1.amazonaws.com/videos
