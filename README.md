@@ -87,19 +87,22 @@ As requested i created a 'videos' table to save the data sent from the
 front with the lambda functions.
 ------------------------------------------------------------------------
 
-Según lo pedido, creé una tabla 'videos' para guardar los datos enviados desde el front con las funciones lambda.
+Según lo pedido, creé una tabla 'videos' para guardar los datos enviados
+desde el front con las funciones lambda.
 ```
 ![videosTable](./exampleImages/videosTable.jpg)
 ```
-If you go to the 'Explore table items' section, you can see that there is effectively the items stored in the DynamoDB database.
+If you go to the 'Explore table items' section, you can see that there
+is effectively the items stored in the DynamoDB database.
 ---------------------------------------------------------------------------
 
-Si vas a la sección 'Explore table items', se puede ver que efectivamente hay elementos almacenados en la base de datos de DynamoDB.
+Si vas a la sección 'Explore table items', se puede ver que efectivamente
+hay elementos almacenados en la base de datos de DynamoDB.
 ```
 ![tableItems](./exampleImages/tableItems.jpg)
 ```
-As you can see in the next image i created three different lambda functions
-which will handle the correspondant actions for every need.
+As you can see in the next image i created three different lambda
+functions which will handle the correspondant actions for every need.
 
 -deleteVideo Function
 -addVideo Function
