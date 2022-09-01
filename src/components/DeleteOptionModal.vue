@@ -17,6 +17,8 @@
           <button id="deleteButton" @click="deleteVideo(item.data.items[0].id)"><b>Delete</b></button>
         </div>
       </div>
+
+      <div id="spinner" v-if="isLoading" class="spinner"></div>
     </div>
 
   </div>
@@ -31,7 +33,9 @@ export default {
     item: Object,
   },
   data() {
-    return {}
+    return {
+      isLoading: false,
+    }
   },
   methods: {
     async deleteVideo(elementId) {
@@ -41,11 +45,10 @@ export default {
       
       for (let i = 0; i < databaseInfo.length; i++) {
         if(databaseInfo[i].videoId === `https://www.youtube.com/watch?v=${elementId}` || databaseInfo[i].videoId === `https://youtu.be/${elementId}`) {
-          await axios.delete(AWSendpoint, { 
-            data: {
-                videoId: databaseInfo[i].videoId
-            }
-          })
+          
+          this.isLoading = true;
+          await axios.delete(AWSendpoint, { data: { videoId: databaseInfo[i].videoId } })
+          this.isLoading = false;
         }
       }
     },
@@ -150,5 +153,9 @@ export default {
   color: #fff;
   font-size: 13px;
   cursor: pointer;
+}
+#spinner {
+  top: 85%;
+  left: 90%;
 }
 </style>
