@@ -1,6 +1,6 @@
 import { createStore } from "vuex";
 import axios from "axios";
-const apiKeyVar = process.env.VUE_APP_YOUTUBE_API_KEY2;
+const apiKeyVar = process.env.VUE_APP_YOUTUBE_API_KEY;
 
 const store = createStore({
     state: {
@@ -29,7 +29,11 @@ const store = createStore({
 
             for (let i = 0; i < response.data.length; i++) {
                 let ids = response.data[i].videoId.slice(-11, response.data[i].videoId.length)
-                youtubeElements.push(await axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${ids}&key=${apiKeyVar}&part=snippet`))
+                let youtubeEl = await axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${ids}&key=${apiKeyVar}&part=snippet`)
+
+                if(youtubeEl.data.items[0] !== undefined) {
+                    youtubeElements.push(youtubeEl)
+                }
             }
                 commit('setVideos', youtubeElements)
         },
