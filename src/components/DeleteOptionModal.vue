@@ -35,11 +35,19 @@ export default {
   },
   methods: {
     async deleteVideo(elementId) {
-        await axios.delete('https://9f36sdoad4.execute-api.us-east-1.amazonaws.com/videos', { 
+      let AWSendpoint = 'https://9f36sdoad4.execute-api.us-east-1.amazonaws.com/videos';
+      let response = await axios.get(AWSendpoint)
+      let databaseInfo = response.data
+      
+      for (let i = 0; i < databaseInfo.length; i++) {
+        if(databaseInfo[i].videoId === `https://www.youtube.com/watch?v=${elementId}` || databaseInfo[i].videoId === `https://youtu.be/${elementId}`) {
+          await axios.delete(AWSendpoint, { 
             data: {
-                videoId: `https://www.youtube.com/watch?v=${elementId}`
+                videoId: databaseInfo[i].videoId
             }
-        })
+          })
+        }
+      }
     },
     closeModal() {
       this.$emit('closeDeleteModal')
