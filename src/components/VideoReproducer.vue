@@ -1,7 +1,7 @@
 <template>
   <div id="reproducerComponent">
 
-    <div id="contentContainer">
+    <!-- <div id="contentContainer"> -->
       <div id="closeButtonContainer">
         <button id="closeReproducer" @click="closeReproducer">
           <img id="backButton" :src="backButton" alt="backButton">
@@ -18,7 +18,7 @@
           allowfullscreen
           ></iframe>
       </div>
-    </div>
+    <!-- </div> -->
   </div>
 </template>
 
@@ -50,14 +50,17 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   position: absolute;
-  top: 0;
+  top: 8vh;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 92vh;
+  z-index: 2;
+  background: #f2f2f2;
   animation: softlyAppear 0.6s ease-in-out;
 }
-#contentContainer {
+/* #contentContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,7 +73,7 @@ export default {
   opacity: 1;
   z-index: 2;
   background: #f2f2f2;
-}
+} */
 
 #closeButtonContainer {
   display: flex;
