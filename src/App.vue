@@ -1,7 +1,9 @@
 <template>
   <div>
     <NavBar />
+    <transition name="fade">
     <VideoReproducer v-if="isReproducerOpen"/>
+    </transition>
     <router-view />
   </div>
 </template>
